@@ -77,6 +77,12 @@ fun optionString show NONE = "NONE"
 
 fun pairString showa showb (a, b) = "(" ^ showa a ^ ", " ^ showb b ^ ")"
 
+fun pairToString (x, y) = 
+    "(" ^ Int.toString x ^ ", " ^ Int.toString y ^ ")"
+
+fun concatPairs [] = ""
+  | concatPairs ((x, y) :: xs) = pairToString (x, y) ^ " " ^ concatPairs(xs);
+
 fun showNothing _ = "a value"
 
 val intString = Int.toString
